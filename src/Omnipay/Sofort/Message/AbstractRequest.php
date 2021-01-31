@@ -70,4 +70,23 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     {
         return $this->endpoint;
     }
+
+    /**
+     * @param $userVariable
+     * @return $this
+     */
+    public function setUserVariable($userVariable)
+    {
+        $this->setParameter('user_variable', $userVariable);
+
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUserVariable()
+    {
+        return $this->getParameter('user_variable');
+    }
 }
